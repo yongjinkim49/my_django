@@ -1,0 +1,19 @@
+{% comment %} blogPosts/templates/base.html {% endcomment %}
+
+<!DOCTYPE html>
+<html>
+	  <head>
+    <meta charset="utf-8">
+    <title>snulion</title>
+		{% comment %} 아래 세 줄을 추가해 scss 파일을 import 해줍니다 {% endcomment %}
+		{% load static %}
+		{% load sass_tags %}
+		<link rel="stylesheet" type="text/css" href="{% sass_src 'blogPosts/scss/style.scss' %}">
+  </head>
+  <header>Snulion Blog</header> {% comment %} header를 작성해줍니다 {% endcomment %}
+  <body>
+  {% block content %}
+  {% endblock %}
+  </body>
+</html>
+
