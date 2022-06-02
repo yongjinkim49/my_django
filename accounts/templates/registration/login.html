@@ -1,0 +1,14 @@
+<!-- accounts/templates/accounts/login.html -->
+<h1>Log in</h1>
+<form method="post" action="{% url 'login' %}">
+  {% csrf_token %}
+  <p>
+    User name:
+    <input type="text" name="username" value="">
+  </p>
+  <p>
+    Password:
+    <input type="password" name="password" value="">
+  </p>
+  <input type="submit" value="login" />
+</form>

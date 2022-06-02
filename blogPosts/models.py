@@ -17,3 +17,13 @@ class Post(models.Model): # 모델 클래스명은 단수형을 사용 (Posts(x)
     def __str__(self):
         return self.title
 
+
+class Comment(models.Model):
+    content = models.TextField()
+    post = models.ForeignKey(Post, on_delete=models.CASCADE)
+    created_at = models.DateTimeField(default=timezone.now)
+
+    def __str__(self):
+        return f'[post: {self.post}] {self.content}'
+
+
